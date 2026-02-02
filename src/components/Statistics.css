@@ -22,6 +22,31 @@
   transition:
     transform 0.3s ease,
     box-shadow 0.3s ease;
+  animation: fadeInUp 0.5s ease-out backwards;
+}
+
+.stat-card:nth-child(1) {
+  animation-delay: 0.1s;
+}
+.stat-card:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.stat-card:nth-child(3) {
+  animation-delay: 0.3s;
+}
+.stat-card:nth-child(4) {
+  animation-delay: 0.4s;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .stat-card:hover {
@@ -90,7 +115,14 @@
   height: 100%;
   background: linear-gradient(90deg, #166534 0%, #22c55e 100%);
   border-radius: 4px;
-  transition: width 0.5s ease;
+  transition: width 0.8s ease-out;
+  animation: progressGrow 1s ease-out;
+}
+
+@keyframes progressGrow {
+  from {
+    width: 0 !important;
+  }
 }
 
 /* Financial Summary */

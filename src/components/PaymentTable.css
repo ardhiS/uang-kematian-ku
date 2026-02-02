@@ -10,6 +10,16 @@
   border-radius: 16px;
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
   background: white;
+  animation: fadeIn 0.4s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 .payment-table {
@@ -106,6 +116,19 @@ thead .sticky-col {
   color: #166534;
   font-weight: 700;
   text-shadow: 0 1px 1px rgba(255, 255, 255, 0.5);
+  animation: cellPop 0.3s ease-out;
+}
+
+@keyframes cellPop {
+  0% {
+    transform: scale(0.95);
+  }
+  50% {
+    transform: scale(1.02);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
 
 .belum-lunas {
