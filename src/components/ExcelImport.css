@@ -1,0 +1,197 @@
+.excel-import {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.btn-import-excel {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 20px;
+  background: linear-gradient(135deg, #0369a1 0%, #0ea5e9 100%);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 8px rgba(3, 105, 161, 0.3);
+}
+
+.btn-import-excel:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(3, 105, 161, 0.4);
+}
+
+.btn-import-excel:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.loading-spinner {
+  width: 16px;
+  height: 16px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-top-color: white;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.import-result {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+  border-radius: 8px;
+  font-size: 14px;
+  animation: slideIn 0.3s ease;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.import-result.success {
+  background-color: #dcfce7;
+  color: #166534;
+  border: 1px solid #86efac;
+}
+
+.import-result.error {
+  background-color: #fee2e2;
+  color: #dc2626;
+  border: 1px solid #fca5a5;
+}
+
+.close-result {
+  background: none;
+  border: none;
+  padding: 4px 8px;
+  cursor: pointer;
+  opacity: 0.7;
+  font-size: 12px;
+}
+
+.close-result:hover {
+  opacity: 1;
+}
+
+/* Preview Modal */
+.preview-modal {
+  max-width: 600px;
+  width: 95%;
+}
+
+.preview-modal h3 {
+  margin: 0 0 16px 0;
+  color: #1e3a21;
+  font-size: 20px;
+  border-bottom: 2px solid #3d7142;
+  padding-bottom: 10px;
+}
+
+.preview-info {
+  background: #f8fafc;
+  padding: 12px 16px;
+  border-radius: 8px;
+  margin-bottom: 16px;
+}
+
+.preview-info p {
+  margin: 6px 0;
+  font-size: 14px;
+  color: #374151;
+}
+
+.preview-table-wrapper {
+  max-height: 300px;
+  overflow-y: auto;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  margin-bottom: 16px;
+}
+
+.preview-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+
+.preview-table th,
+.preview-table td {
+  padding: 10px 12px;
+  text-align: left;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.preview-table th {
+  background: #f1f5f9;
+  font-weight: 600;
+  color: #374151;
+  position: sticky;
+  top: 0;
+}
+
+.preview-table tbody tr:hover {
+  background-color: #f8fafc;
+}
+
+.more-data {
+  text-align: center;
+  color: #6b7280;
+  font-style: italic;
+}
+
+/* Export Button Style */
+.btn-export-excel {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 20px;
+  background: linear-gradient(135deg, #166534 0%, #22c55e 100%);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 8px rgba(22, 101, 52, 0.3);
+}
+
+.btn-export-excel:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(22, 101, 52, 0.4);
+}
+
+@media (max-width: 768px) {
+  .excel-import {
+    width: 100%;
+  }
+
+  .btn-import-excel,
+  .btn-export-excel {
+    flex: 1;
+    justify-content: center;
+  }
+
+  .import-result {
+    width: 100%;
+  }
+}
