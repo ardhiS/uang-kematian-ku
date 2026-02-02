@@ -121,14 +121,6 @@ function App() {
         {!loading && !error && (
           <>
             <div className='legend-section'>
-              <div className='legend-item'>
-                <span className='legend-color lunas-color'></span>
-                <span>Sudah Lunas</span>
-              </div>
-              <div className='legend-item'>
-                <span className='legend-color belum-color'></span>
-                <span>Belum Lunas</span>
-              </div>
               <div className='legend-info'>
                 Iuran per bulan: <strong>{formatRupiah(IURAN_AMOUNT)}</strong>
               </div>
