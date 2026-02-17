@@ -6,7 +6,7 @@ import { formatRupiah, IURAN_AMOUNT } from './data/wargaData';
 import './App.css';
 
 function App() {
-  const [tahun, setTahun] = useState(2026);
+  const [tahun, setTahun] = useState(new Date().getFullYear());
   const [wargaList, setWargaList] = useState([]);
   const [payments, setPayments] = useState({});
   const [ringkasan, setRingkasan] = useState({
@@ -30,6 +30,7 @@ function App() {
         paymentData,
         tahun: sheetTahun,
         ringkasan: sheetRingkasan,
+        isFromCache = false,
       } = await fetchGoogleSheetsData();
       setWargaList(wargaData);
       setPayments(paymentData);
@@ -41,12 +42,13 @@ function App() {
           saldoUangKematian: 0,
         },
       );
-      setLastUpdate(new Date().toLocaleString('id-ID'));
+
+      // Update timestamp with cache indicator
+      const timestamp = new Date().toLocaleString('id-ID');
+      setLastUpdate(isFromCache ? `${timestamp} (dari cache)` : timestamp);
     } catch (err) {
       console.error('Error loading data:', err);
-      setError(
-        'Gagal memuat data dari Google Sheets. Pastikan spreadsheet dapat diakses publik.',
-      );
+      setError(err.message || 'Gagal memuat data dari Google Sheets.');
     } finally {
       setLoading(false);
     }

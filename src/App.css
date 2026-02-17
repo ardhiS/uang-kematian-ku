@@ -56,10 +56,12 @@ body {
 }
 
 @keyframes pulse {
+
   0%,
   100% {
     transform: scale(1);
   }
+
   50% {
     transform: scale(1.08);
   }
@@ -70,6 +72,7 @@ body {
   from {
     opacity: 0;
   }
+
   to {
     opacity: 1;
   }
@@ -80,6 +83,7 @@ body {
     opacity: 0;
     transform: translateY(20px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -91,6 +95,7 @@ body {
     opacity: 0;
     transform: translateX(-20px);
   }
+
   to {
     opacity: 1;
     transform: translateX(0);
@@ -186,11 +191,9 @@ body {
   align-items: center;
   gap: 10px;
   padding: 14px 24px;
-  background: linear-gradient(
-    135deg,
-    rgba(255, 255, 255, 0.25) 0%,
-    rgba(255, 255, 255, 0.15) 100%
-  );
+  background: linear-gradient(135deg,
+      rgba(255, 255, 255, 0.25) 0%,
+      rgba(255, 255, 255, 0.15) 100%);
   color: white;
   border: 2px solid rgba(255, 255, 255, 0.4);
   border-radius: 12px;
@@ -203,11 +206,9 @@ body {
 }
 
 .btn-refresh:hover:not(:disabled) {
-  background: linear-gradient(
-    135deg,
-    rgba(255, 255, 255, 0.35) 0%,
-    rgba(255, 255, 255, 0.25) 100%
-  );
+  background: linear-gradient(135deg,
+      rgba(255, 255, 255, 0.35) 0%,
+      rgba(255, 255, 255, 0.25) 100%);
   transform: translateY(-2px);
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
@@ -501,6 +502,7 @@ body {
   from {
     opacity: 0;
   }
+
   to {
     opacity: 1;
   }
@@ -521,6 +523,7 @@ body {
     transform: translateY(20px);
     opacity: 0;
   }
+
   to {
     transform: translateY(0);
     opacity: 1;
@@ -616,7 +619,8 @@ body {
 /* Responsive */
 @media (max-width: 768px) {
   .app-header {
-    padding: 16px;
+    padding: 18px 16px;
+    border-bottom: 3px solid #166534;
   }
 
   .header-content {
@@ -633,7 +637,7 @@ body {
   }
 
   .logo-icon {
-    font-size: 48px;
+    font-size: 52px;
   }
 
   .logo-text {
@@ -641,12 +645,14 @@ body {
   }
 
   .logo-text h1 {
-    font-size: 20px;
+    font-size: 22px;
     line-height: 1.3;
+    font-weight: 800;
   }
 
   .logo-text p {
-    font-size: 14px;
+    font-size: 15px;
+    font-weight: 600;
   }
 
   .header-info {
@@ -656,47 +662,73 @@ body {
   }
 
   .year-display {
-    padding: 8px 20px;
+    padding: 10px 24px;
+    border: 2px solid rgba(255, 255, 255, 0.4);
   }
 
   .year-label {
-    font-size: 11px;
+    font-size: 12px;
+    font-weight: 700;
   }
 
   .year-value {
-    font-size: 24px;
+    font-size: 26px;
+    font-weight: 900;
   }
 
   .btn-refresh {
-    padding: 12px 20px;
-    font-size: 13px;
+    padding: 14px 24px;
+    font-size: 14px;
+    font-weight: 700;
+    border: 2px solid rgba(255, 255, 255, 0.5);
   }
 
   .app-main {
-    padding: 16px;
+    padding: 14px 12px;
   }
 
+  /* Legend Section - Better mobile layout */
   .legend-section {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: stretch;
+    padding: 16px 18px;
+    gap: 12px;
+    border: 2px solid #e5e7eb;
   }
 
   .legend-info {
     margin-left: 0;
-    margin-top: 10px;
+    margin-top: 0;
+    font-size: 15px;
+    padding: 14px 18px;
+    border: 2px solid #22c55e;
+    text-align: center;
+  }
+
+  .legend-info strong {
+    font-size: 19px;
   }
 
   .last-update {
-    margin-top: 10px;
+    margin-top: 0;
+    font-size: 13px;
+    padding: 10px 16px;
+    border: 1px solid #cbd5e1;
+    text-align: center;
   }
 
   .data-source-info {
     width: 100%;
     justify-content: center;
+    font-size: 13px;
+    padding: 14px 18px;
+    border: 2px solid #93c5fd;
   }
 
+  /* Action Bar */
   .action-bar {
     flex-direction: column;
+    gap: 12px;
   }
 
   .action-buttons {
@@ -708,18 +740,106 @@ body {
     max-width: 100%;
   }
 
+  .search-box input {
+    padding: 16px 44px 16px 48px;
+    font-size: 16px;
+    border: 2px solid #d1d5db;
+  }
+
+  .search-icon {
+    font-size: 20px;
+  }
+
   .btn-add-warga {
     width: 100%;
+    padding: 14px 24px;
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .app-header {
+    padding: 16px 14px;
+  }
+
+  .logo-icon {
+    font-size: 46px;
+  }
+
+  .logo-text h1 {
+    font-size: 20px;
+  }
+
+  .logo-text p {
+    font-size: 14px;
+  }
+
+  .header-info {
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+  }
+
+  .year-display {
+    width: 100%;
+    padding: 12px 20px;
+  }
+
+  .year-label {
+    font-size: 11px;
+  }
+
+  .year-value {
+    font-size: 24px;
+  }
+
+  .btn-refresh {
+    width: 100%;
+    justify-content: center;
+    padding: 14px 20px;
+    font-size: 14px;
+  }
+
+  .app-main {
+    padding: 12px 10px;
+  }
+
+  .legend-section {
+    padding: 14px 16px;
+  }
+
+  .legend-info {
+    font-size: 14px;
+    padding: 12px 16px;
+  }
+
+  .legend-info strong {
+    font-size: 18px;
+  }
+
+  .last-update {
+    font-size: 12px;
+    padding: 8px 14px;
+  }
+
+  .data-source-info {
+    font-size: 12px;
+    padding: 12px 16px;
+  }
+
+  .search-box input {
+    padding: 15px 42px 15px 46px;
+    font-size: 15px;
   }
 }
 
 @media (max-width: 380px) {
   .app-header {
-    padding: 12px;
+    padding: 14px 12px;
   }
 
   .logo-icon {
-    font-size: 40px;
+    font-size: 42px;
   }
 
   .logo-text h1 {
@@ -730,21 +850,24 @@ body {
     font-size: 13px;
   }
 
-  .header-info {
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  .year-display {
-    width: 100%;
+  .year-value {
+    font-size: 22px;
   }
 
   .btn-refresh {
-    width: 100%;
-    justify-content: center;
+    font-size: 13px;
+    padding: 13px 18px;
   }
 
   .app-main {
-    padding: 12px;
+    padding: 10px 8px;
+  }
+
+  .legend-info {
+    font-size: 13px;
+  }
+
+  .legend-info strong {
+    font-size: 17px;
   }
 }
