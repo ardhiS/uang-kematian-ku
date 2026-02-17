@@ -14,7 +14,7 @@ dist-ssr
 
 # Environment variables
 .env
-
+PROMPT_TEMPLATE.md
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
