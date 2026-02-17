@@ -236,6 +236,7 @@ const parseSheetData = (data) => {
     }
   }
 
+  // okeee
   // Parse data warga mulai dari baris setelah header
   const startRow = headerRowIndex + 1;
 
