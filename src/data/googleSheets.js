@@ -241,7 +241,7 @@ const parseSheetData = (data) => {
   const startRow = headerRowIndex + 1;
 
   // BATASAN: Hanya baca sampai nomor 162 (Ustd Ading)
-  const MAX_ROW_NUMBER = 162;
+  const MAX_ROW_NUMBER = 163;
 
   for (let i = startRow; i < data.length; i++) {
     const row = data[i];
